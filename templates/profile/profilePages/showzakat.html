@@ -1,0 +1,27 @@
+{% extends 'profile/baseProfile.html' %}
+{% load static %}
+
+{% block Zakat %}
+    <div class="content justify-content-center d-flex">
+        <table class="table table-bordered p-3 m-2">
+
+            <thead class="table-head border-bottom bg-info p-2 text-center">
+            <tr class="border table-row p-2">
+                <td>Zakat</td>
+                <td>Organization</td>
+                <td>Show Details</td>
+            </tr>
+            </thead>
+            {% for info in zakatdata %}
+                <tbody class="text-center">
+
+                <td>{{ info.zakatAmount }} ৳</td>
+                <td>{{ info.organization }} ৳</td>
+                <td><a href="#"><i class="fa fa-eye"></i> View </a></td>
+
+                </tbody>
+            {% endfor %}
+        </table>
+
+    </div>
+{% endblock %}

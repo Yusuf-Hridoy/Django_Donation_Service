@@ -1,0 +1,441 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load  static %}
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title> Zakat Admin Dashboard | </title>
+  <!-- Bootstrap Core CSS -->
+  <link href="{% static 'css/admin/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" />
+  <!-- Font awesome icons css -->
+  <link href="{% static 'css/admin/font-awesome-4.7.0/css/font-awesome.css' %}" rel="stylesheet">
+  <!-- Bootstrap icons css -->
+  <link href="{% static 'css/admin/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <!-- Google Font CSS -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Varela+Round" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="{% static 'css/admin/css/style.css' %}" rel="stylesheet" />
+
+</head>
+
+<body>
+  <section class="top-linktosite" style="background-color: #1a8d03">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9">
+          <i class="fa fa-user-o"></i>Welcome , {{ user.username }} !
+        </div>
+        <div class="col-md-3 text-right">
+          <a href="{% url "home" %}"> <i class="fa fa-external-link"></i> Open Website </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <header class="header-main">
+    <div class="overlay" style="background-image: url('{% static "img/banner/zakat-admin.jpg" %}');background-size: cover">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 logo-text">
+            <a href="index.html" class="logo">
+              Hi <span>{{ user.username }}</span>
+            </a>
+          </div>
+          <div class="col-md-9 text-end">
+            <a href="{% url 'logout' %}" class="btn logout-btn"> <i class="fa fa-circle-o-notch"></i> Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="work-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h5 class="page-heading" >DASHBOARD</h5>
+          <hr />
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-md-3">
+          <div class="alert alert-warning ">
+            <h1>{{ donorCount }}+</h1>
+            <h4>Donor</h4>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="alert alert-primary">
+            <h1>{{ projectCount }}+</h1>
+            <h4>Successful Projects</h4>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="alert alert-secondary ">
+            <h1>{{requestCount }}+</h1>
+            <h4>Zakat Requests</h4>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="alert alert-success">
+            <h1>{{ donationMoney }}+</h1>
+            <h4>Donation</h4>
+          </div>
+        </div>
+      </div>
+        <!-- Table start from here  -->
+      <div class="row">
+        <div class="col-md-12">
+          <hr>
+          <div class="alert alert-info" role="alert">
+            <strong class="text-center h3"> Donation Records </strong>
+          </div>
+          <div class="table-responsive">
+            <table id="example" class="table table-bordered table-striped " style="width:100%">
+              <thead class="bg-success" >
+                <tr>
+                  <th>Name</th>
+                  <th>Address</th>
+                  <th>Phone</th>
+                  <th>Donation</th>
+                  <th>Ogganization</th>
+                  <th>Projects</th>
+                </tr>
+              </thead>
+              <tbody>
+              {% for data in donationData %}
+                <tr>
+                  <td>{{ data.firstName }}</td>
+                  <td>{{ data.address }}</td>
+                  <td>{{ data.phone }}</td>
+                  <td>{{ data.donationMoney }}</td>
+                  <td>{{ data.organizationDonation }}</td>
+                  <td>{{ data.projectDonation }}</td>
+                </tr>
+              {% endfor %}
+              </tbody>
+              <tfoot class="bg-success">
+                <tr>
+                  <th>Name</th>
+                  <th>Address</th>
+                  <th>Phone</th>
+                  <th>Donation</th>
+                  <th>Ogganization</th>
+                  <th>Projects</th>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </div>
+
+
+     <!-- Table start from here  -->
+      <div class="row">
+        <div class="col-md-12">
+          <hr>
+          <div class="alert alert-info" role="alert">
+            <strong class="text-center h3"> Zakat Records </strong>
+          </div>
+          <div class="table-responsive">
+            <table id="example" class="table table-bordered table-striped " style="width:100%">
+              <thead class="bg-success">
+                <tr>
+                  <th>Name</th>
+                  <th>Address</th>
+                  <th>Phone</th>
+                  <th>Zakat</th>
+                  <th>Ogganization</th>
+                </tr>
+              </thead>
+              <tbody>
+              {% for data in ZakatData %}
+                <tr>
+                  <td>{{ data.firstName }}</td>
+                  <td>{{ data.address }}</td>
+                  <td>{{ data.phone }}</td>
+                  <td>{{ data.zakatAmount }}</td>
+                  <td>{{ data.organization }}</td>
+                </tr>
+              {% endfor %}
+              </tbody>
+              <tfoot class="bg-success">
+                <tr>
+                  <th>Name</th>
+                  <th>Address</th>
+                  <th>Phone</th>
+                  <th>Zakat</th>
+                  <th>Ogganization</th>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </div>
+
+
+    <!-- Table start from here  -->
+      <div class="row">
+        <div class="col-md-12">
+          <hr>
+          <div class="alert alert-info" role="alert">
+            <strong class="text-center h3"> Request for Donation's Records </strong>
+          </div>
+          <div class="table-responsive">
+            <table id="example" class="table table-bordered table-striped " style="width:100%">
+              <thead class="bg-success" >
+                <tr>
+                  <th>Name</th>
+                  <th>Address</th>
+                  <th>NID</th>
+                  <th>Reason</th>
+                  <th>Document</th>
+                  <th>Request Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+              {% for data in requestData %}
+                <tr>
+                  <td>{{ data.requesterFirstName }}</td>
+                  <td>{{ data.requesterAddress }}</td>
+                  <td>{{ data.requesterNID }}</td>
+                  <td>{{ data.requestReason }}</td>
+                  <td>{{ data.requestDocument }}</td>
+                  <td>{{ data.requestedAmount }}</td>
+                </tr>
+              {% endfor %}
+              </tbody>
+              <tfoot class="bg-success" >
+                <tr>
+                  <th>Name</th>
+                  <th>Address</th>
+                  <th>NID</th>
+                  <th>Reason</th>
+                  <th>Document</th>
+                  <th>Request Amount</th>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </div>
+
+
+    <!-- Table start from here  -->
+      <div class="row">
+        <div class="col-md-12">
+          <hr>
+          <div class="alert alert-info" role="alert">
+            <strong class="text-center h3"> Recipients Records </strong>
+          </div>
+          <div class="table-responsive">
+            <table id="example" class="table table-bordered table-striped " style="width:100%">
+              <thead class="bg-success">
+                <tr>
+                  <th>Donor Name</th>
+                  <th> Recipient Name </th>
+                  <th> Recipient Phone </th>
+                  <th>Recipient Address</th>
+                  <th>Receipt Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+              {% for data in trackData %}
+                <tr>
+                  <td>{{ data.donorName }}</td>
+                  <td>{{ data.recipientName }}</td>
+                  <td>{{ data.recipientPhone }}</td>
+                  <td>{{ data.recipientAddress }}</td>
+                  <td>{{ data.receiptAmount }}</td>
+                </tr>
+              {% endfor %}
+              </tbody>
+              <tfoot class="bg-success">
+                <tr>
+                  <th>Donor Name</th>
+                  <th> Recipient Name </th>
+                  <th> Recipient Phone </th>
+                  <th>Recipient Address</th>
+                  <th>Receipt Amount</th>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </div>
+
+
+    <!-- Table start from here  -->
+      <div class="row">
+        <div class="col-md-12">
+          <hr>
+          <div class="alert alert-info" role="alert">
+            <strong class="text-center h3"> Organization </strong>
+          </div>
+          <div class="table-responsive">
+            <table id="example" class="table table-bordered table-striped " style="width:100%">
+              <thead class="bg-success">
+                <tr>
+                  <th>Organization Name</th>
+                  <th>Owner Name </th>
+                  <th>Phone</th>
+                  <th>Address</th>
+                  <th>Verification Document</th>
+                </tr>
+              </thead>
+              <tbody>
+              {% for data in organizationData %}
+                <tr>
+                  <td>{{ data.orgName }}</td>
+                  <td>{{ data.orgOwnerName }}</td>
+                  <td>{{ data.orgPhone }}</td>
+                  <td>{{ data.orgAddress }}</td>
+                  <td>{{ data.orgDocument.url }}</td>
+                </tr>
+              {% endfor %}
+              </tbody>
+              <tfoot class="bg-success" >
+                <tr>
+                  <th>Organization Name</th>
+                  <th>Owner Name </th>
+                  <th>Phone</th>
+                  <th>Address</th>
+                  <th>Verification Document</th>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <h3>DISCLAIMER</h3>
+          <p>
+            Praesent lacinia nibh eu nibh finibus,
+            faucibus vel euismod gravida. Sed
+            condimentum eros eros, ut dictum metus feugiat
+            et. Morbi malesuada diam ut elit mollis mollis.
+          </p>
+          <br><br>
+          <h6>© All Rights Reserved |
+
+            <a target="=_blank" href="https://thedesignstart.com/" style="color:#9E9E9E;text-decoration:none;"> Design by : Rakibul & Yousuf </a>
+
+
+          </h6>
+
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--Core Jquery-->
+  <script src="{% static 'css/admin/js/jquery-3.2.1.min.js' %}"></script>
+  <!--Core Bootstrap Files-->
+  <script src="{% static 'css/admin/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <!--Custom Scripts-->
+  <script src="{% static 'css/admin/js/custom.js' %}"></script>
+  <!-- Jquery Datatable Scripts-->
+  <script src="assets/datatables/jquery.dataTables.min.js"></script>
+  <script src="assets/datatables/dataTables.bootstrap5.min.js"></script>
+  <!-- Chart Scripts-->
+  <script src="{% static 'css/admin/js/chart.min.js' %}"></script>
+
+  <!-- CUSTOM EXAMPLE SCRIPT FOR DATA TABLE and CHARTS -->
+  <script type="text/javascript">
+
+    //datatable example
+    $(document).ready(function () {
+      $('#example').DataTable();
+    });
+
+    //First Chart Example
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+          label: '# of Votes',
+          data: [12, 19, 3, 5, 2, 3],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+    //Second Chart Example
+
+    var ctx = document.getElementById('myChart2').getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'polarArea',
+      data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+          label: '# of Votes',
+          data: [12, 19, 3, 5, 2, 3],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+  </script>
+
+</body>
+
+</html>

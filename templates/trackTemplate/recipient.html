@@ -1,0 +1,39 @@
+{% extends 'baseTemplate.html' %}
+{% load static %}
+
+{% block recipientPage %}
+<br>
+<br>
+<br>
+    <div class="container">
+        <div class="content">
+            <div class="row p-2">
+                <div class="col-lg-4 col-sm-12 ">
+                    <div class="rounded mx-2 bg-light p-2">
+                        <img src="/media/{{ zakatTrack.recipientAvatar }}" alt="" style="width:100%;height:15rem;border-radius:50% ">
+                        <h3 class="text-center">{{ zakatTrack.recipientName }}</h3>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-sm-12 ">
+                    <div class="text mx-2 bg-light p-2">
+                        <table class="table table-bordered text-center">
+                            <tr>
+                                <th class="table-head bg-success"> Phone Number </th>
+                                <td>{{ zakatTrack.recipientPhone }}</td>
+                            </tr>
+                            <tr>
+                                <th class="table-head bg-success"> Address </th>
+                                <td>{{ zakatTrack.recipientAddress }}</td>
+                            </tr>
+                            <tr>
+                                <th class="table-head bg-success"> Amount </th>
+                                <td>{{ zakatTrack.receiptAmount }}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

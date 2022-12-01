@@ -1,0 +1,41 @@
+{% extends 'baseTemplate.html' %}
+{% load static %}
+
+{% block SingleZakatRequest %}
+    <br>
+    <br>
+    <div class="container ">
+        <div class="row">
+            <div class="col-3 p-1 ">
+                <div class="container bg-light rounded" style="background: url('{% static "img/Zakat-form.jpg" %}')">
+                    <h2 class="text-muted">
+                        This is side bar
+                        <space>
+
+                        </space>
+                    </h2>
+                </div>
+            </div>
+            <div class="col-9 p-1 ">
+                <div class="container bg-light rounded">
+                    <div class="row">
+                        <div class="col-7">
+                            <p class="text">
+                            <h3>{{ SingleRequest.requesterFirstName }} {{ SingleRequest.requesterLastName }} </h3> put a request
+                            for {{ SingleRequest.requestedAmount }} Taka by showing
+                            the reason of {{ SingleRequest.requestReason }}
+                            </p>
+                        </div>
+                        <div class="col-5"
+                             style="background: url('{{ SingleRequest.requestDocument.url }}'); height: 20rem;">
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

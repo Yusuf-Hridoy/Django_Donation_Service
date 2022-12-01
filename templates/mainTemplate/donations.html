@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="{% static 'css/donations.css' %}"/>
+    <title>Document</title>
+</head>
+
+<body>
+
+{% include 'header.html' %}
+
+<div class="mainContainer">
+    <div class="progress">
+        <!-- <div class="line"></div> -->
+        <div class="row">
+            <div class="box">
+                <button class="circ">1</button>
+                <p class="title">Info</p>
+            </div>
+            <div class="box">
+                <button class="circ">2</button>
+                <p class="title">Payment</p>
+            </div>
+            <div class="box">
+                <button class="circ">3</button>
+                <p class="title">Thank You</p>
+            </div>
+        </div>
+    </div>
+
+    <form>
+        <h2>Info And Payment</h2>
+        <br/>
+        <div class="container">
+            <input type="text" placeholder="First Name"/>
+            <input type="text" placeholder="Last Name"/>
+            <input type="phone" placeholder="Phone Number"/>
+            <input type="email" placeholder="Enter your Email"/>
+            <textarea
+                    name=""
+                    id=""
+                    cols="30"
+                    rows="10"
+                    placeholder="Address"
+            ></textarea>
+            <textarea
+                    name=""
+                    id=""
+                    cols="30"
+                    rows="10"
+                    placeholder="Special Note"
+            ></textarea>
+        </div>
+    </form>
+
+    <form id="active">
+        <div class="container">
+            <div class="col">
+                <h2>Select Payment Method</h2>
+                <div class="payment__options">
+                    <div class="bank">Bank</div>
+                    <div class="bkash">Bkash</div>
+                </div>
+                <pre id="bank__pre">
+UCB Bank LTD
+Account Name : Xoom Motors
+Account Number : 2042112000001861
+Branch : Jhalokati
+Routing No : 245420061
+          </pre
+          >
+                <pre id="bkash__pre">
+Bkash: 01973114762 (Payment)
+Go to Your bKash Mobile Menu by dialing *247#
+Choose “Payment”
+Enter Merchant bKash Account Number 01973114762
+Enter the amount (Cart Amount)
+Enter a reference (Your Phone/ Invoice No)
+Enter Counter Number 0
+Now enter your bKash Mobile Menu PIN to Confirm!
+Done! You will receive a confirmation message from bKash*
+          </pre
+          >
+                <label for="check">Upload Your Check</label>
+                <input type="file" name="check" id="check"/>
+                <input
+                        type="text"
+                        id="donation"
+                        placeholder="Enter Your Transaction Id"
+                />
+            </div>
+            <div class="col">
+                <h2>COMPLETE PAYMENT DETAIL</h2>
+                <p class="info">
+                    COMPLETE PAYMENT DETAIL IF YOU WOULD LIKE TO MAKE AN OFFLINE
+                    DONATION, YOU CAN SEND A CHECK TO THE FOLLOWING ADDRESS.
+                </p>
+                <address>
+                    <div>
+                        <span class="icon"></span>
+                        <p>
+                            Total Donation Co. 1234 Example Street Los Angeles CA 9004
+                            Canada
+                        </p>
+                    </div>
+                    <div>
+                        <span class="icon"></span>
+                        <p>Sample@Gmail.Com</p>
+                    </div>
+                    <div>
+                        <span class="icon"></span>
+                        <p>+2-234-3458302</p>
+                    </div>
+                    <div>
+                        <span class="icon"></span>
+                        <p>+2-235-3478302</p>
+                    </div>
+                </address>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% include 'footer.html' %}
+
+
+</body>
+</html>

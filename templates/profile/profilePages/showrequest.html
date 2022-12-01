@@ -1,0 +1,28 @@
+{% extends 'profile/baseProfile.html' %}
+{% load static %}
+
+{% block Request %}
+
+    <div class="content justify-content-center d-flex">
+        <table class="table table-bordered p-3 m-2">
+
+            <thead class="table-head border-bottom bg-info p-2 text-center">
+            <tr class="border table-row p-2">
+                <td>Reason</td>
+                <td>Amount</td>
+                <td>Document</td>
+                <td></td>
+            </tr>
+            </thead>
+            {% for info in requestData %}
+                <tbody class="text-center">
+                <td>{{ info.requestReason }}</td>
+                <td>{{ info.requestedAmount }} ৳</td>
+                <td><img src="/media/{{ info.requestDocument }}" style="width: 5rem;height: 5rem"></td>
+                <td><a href="{% url 'showsinglerequest' info.id %}"><i class="fa fa-eye"></i> View </a></td>
+                </tbody>
+            {% endfor %}
+        </table>
+    </div>
+
+{% endblock %}

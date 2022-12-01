@@ -1,0 +1,117 @@
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    {% load static %}#}
+{#    <meta charset="UTF-8"/>#}
+{#    <!-- CSS only -->#}
+{#    <link#}
+{#            rel="stylesheet"#}
+{#            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"#}
+{#            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"#}
+{#            crossorigin="anonymous"#}
+{#    />#}
+{##}
+{#    <title>slider</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{##}
+{#<div class="container d-flex card-img-overlay" style="background-image: url('{% static "img/banner/banner.png" %}') ">#}
+{#    <div class="col-6 justify-content-center">#}
+{#        <h3> Calculate your Zakat here </h3>#}
+{#    </div>#}
+{#    <div class="col-2">#}
+{##}
+{#    </div>#}
+{#    <div class="col-4">#}
+{#        <form class="forms">#}
+{#            <h4>Zakat Calculator</h4>#}
+{#            <div class="form-contact">#}
+{#                <div class="form-group">#}
+{#                    <label for="exampleInputEmail1"> Total money </label>#}
+{#                    <input type="number" class="form-control" placeholder="Enter email">#}
+{#                </div>#}
+{#                <div class="form-group">#}
+{#                    <label for="exampleInputEmail1"> Value of the Property  </label>#}
+{#                    <input type="number" class="form-control" placeholder="Enter email">#}
+{#                </div>#}
+{#                <div class="form-group">#}
+{#                    <label for="exampleInputEmail1"> Tex and Debt  </label>#}
+{#                    <input type="number" class="form-control" placeholder="Enter email">#}
+{#                </div>#}
+{#                <button type="submit" class="btn btn-primary">Submit</button>#}
+{#                <div class="form-group">#}
+{#                    <label for="exampleInputEmail1"> Total Zakat  </label>#}
+{#                    <input type="number" class="form-control" placeholder="Enter email">#}
+{#                </div>#}
+{##}
+{#            </div>#}
+{#        </form>#}
+{##}
+{#    </div>#}
+{##}
+{#</div>#}
+{##}
+{##}
+{#<!-- JavaScript Bundle with Popper -->#}
+{#<script#}
+{#        src="https://code.jquery.com/jquery-3.2.1.slim.min.js"#}
+{#        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"#}
+{#        crossorigin="anonymous"#}
+{#></script>#}
+{#<script#}
+{#        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"#}
+{#        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"#}
+{#        crossorigin="anonymous"#}
+{#></script>#}
+{#<script#}
+{#        src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"#}
+{#        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"#}
+{#        crossorigin="anonymous"#}
+{#></script>#}
+{#</body>#}
+{#</html>#}
+
+
+{% load static %}
+
+{% block calculator %}
+
+    <div class="container d-flex card-img-overlay"
+         style="background-image: url('{% static "img/banner/banner.png" %}') ">
+        <div class="col-6 ">
+            <h3 class="text-center"> Calculate your Zakat here </h3>
+        </div>
+        <div class="col-2">
+
+        </div>
+        <div class="col-4">
+            <form class="forms">
+                <h4>Zakat Calculator</h4>
+                <div class="form-contact">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1"> Total money </label>
+                        <input type="number" class="form-control" placeholder="Enter amount">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1"> Value of the Property </label>
+                        <input type="number" class="form-control" placeholder="Enter amount">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1"> Tex and Debt </label>
+                        <input type="number" class="form-control" placeholder="Enter amount">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1"> Total Zakat </label>
+                        <input type="number" class="form-control" placeholder="Zakat amount">
+                    </div>
+
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+
+{% endblock %}

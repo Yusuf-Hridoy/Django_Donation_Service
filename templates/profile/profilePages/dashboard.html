@@ -1,0 +1,59 @@
+{% extends 'profile/baseProfile.html' %}
+{% load static %}
+
+{% block Daseboard %}
+    <div class="content">
+        <!-- First Table-->
+        <div class="row p-3">
+            <table class="table table-bordered table-light">
+                <thead class="table-head bg-success text-center ">
+                <th> Total Zakat</th>
+                <th> Total Donation</th>
+                <th> Total</th>
+                </thead>
+                <tbody class="text-center bg-secondary" style="color: white">
+                <tr>
+                    <td>{{ totalZakat }} ৳</td>
+                    <td>{{ totalDonation }} ৳</td>
+                    <td>{{ Total }} ৳</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- Second Table-->
+        <div class="row p-3">
+            <table class="table table-bordered table-light">
+                <thead class="table-head bg-success text-center ">
+                <th> Donation on Organization</th>
+                <th> Donation on Project</th>
+                <th> Zakat on Organization</th>
+                </thead>
+                <tbody class="text-center bg-secondary" style="color: white">
+                <tr>
+                    <td>{{ orgDonation }} ৳</td>
+                    <td>{{ proDonation }} ৳</td>
+                    <td>{{ orgZakat }} ৳</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- Third Table-->
+        <div class="row p-3">
+            <table class="table table-bordered table-light">
+                <thead class="table-head bg-success text-center ">
+                <th> Without org and proj Money</th>
+                <th> Zakat and Donation Spent</th>
+                <th> Zakat and Donation left</th>
+                </thead>
+                <tbody class="text-center border bg-secondary" style="color: white" >
+                <tr>
+                    <td> {{ availableDonation }}৳</td>
+                    <td> {{ SpentMoney }}৳</td>
+                    <td> {{ Donationleft }}৳</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+{% endblock %}

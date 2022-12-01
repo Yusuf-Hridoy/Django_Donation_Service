@@ -1,0 +1,230 @@
+
+/* ========================================================================
+Template : HoriAdmin v1.0
+Authour  : https://www.TheDesignStart.com
+LIcense  :  www.TheDesignStart.com/license 
+Template URL: https://thedesignstart.com/templates/bootstrap/free-responsive-admin-dashboard-template/
+Version  : 1.0
+========================================================================= * /
+
+/* GENERAL */
+
+body {
+  font-family: "Varela Round", sans-serif;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+   
+    padding: 0px;
+}
+div.dataTables_wrapper div.dataTables_length select {
+    width: 80px;
+    display: inline-block;
+}
+
+.fa {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+.not-found h1 {
+  padding-top: 100px;
+  font-size: 150px;
+  color:#00cf2f;
+}
+.not-found h3 {
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 30px;
+  color:#00cf2f;
+}
+
+.page-heading{
+  color: #00cf2f;
+    font-weight: 900;
+    font-size: 30px;
+}
+/* DASHBOARD*/
+
+.dashboard-set .slider-set {
+  border: 2px dashed #afafaf;
+}
+
+/* LOGIN */
+
+.login-box {
+  border: 1px solid #e5e5e5;
+  padding: 25px 30px 25px 30px;
+  border-radius: 5px;
+}
+.login-box label{
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+.login-box .btn-fb {
+  color: #fff;
+  background-color: #3b5998;
+}
+
+.login-box .btn-fb:hover {
+  color: #fff;
+  background-color: #496ebc;
+}
+
+.login-box .btn-tw {
+  color: #fff;
+  background-color: #55acee;
+}
+
+.login-box .btn-tw:hover {
+  color: #fff;
+  background-color: #59b5fa;
+}
+
+.login-box .hand-cursor {
+  cursor: pointer;
+}
+
+/* TOP HEADER */
+.top-linktosite {
+  background-color: #2196f3;
+  padding: 10px 15px 15px 15px;
+  font-size: 15px;
+  border-top: 5px solid #3d4145;
+  color: #fff;
+}
+
+.top-linktosite a {
+  color: #fff;
+  text-decoration: none;
+}
+/* HEADER */
+
+header {
+  background: url(../../assets/imgs/header.jpg) no-repeat center center;
+  padding: 0;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+header a.logo {
+  font-size: 40px;
+  margin-left: 45px;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 900;
+}
+header a.logo span {
+  color: #00cf2f;
+}
+
+header .overlay {
+  padding-top: 45px;
+  background-color: rgb(0 0 0 / 81%);
+  padding-bottom: 45px;
+  color: #fff;
+}
+
+.header-main a.logout-btn {
+  background-color: #f00;
+  padding: 10px 30px 12px 30px;
+  font-size: 20px;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.header-main a.signup-btn {
+  background-color: #009688;
+  padding: 10px 30px 12px 30px;
+  font-size: 20px;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 600;
+}
+/* MENU LINKS */
+.menu-section {
+  border-bottom: 1px solid #dbdbdb;
+}
+
+.menu-links .navbar-brand {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .menu-links .navbar-brand {
+    display: block;
+  }
+  .menu-links .navbar-expand-md .navbar-nav .nav-link {
+    padding-left: 30px;
+    color: #000;
+    border-bottom: 1px solid #e3e3e3;
+  }
+}
+
+.menu-links .navbar-expand-md .navbar-nav .dropdown-menu {
+    margin-left: 30px;
+  }
+  
+.menu-links .navbar-toggler {
+  border: 1px solid #2196f3;
+  padding: 10px 5px 0px 9px;
+  cursor: pointer;
+}
+
+.menu-links .navbar-expand-md .navbar-nav .nav-link {
+  padding-left: 30px;
+  color: #000;
+}
+
+.menu-links .navbar-expand-md .navbar-nav .dropdown-menu {
+  position: absolute;
+  margin-top: 9px;
+  border-top: 0px;
+  border-radius: 0px;
+  border-bottom: 0px;
+  border-right: 1px solid #dbdbdb;
+  border-left: 1px solid #dbdbdb;
+  padding: 0px;
+}
+
+.menu-links .dropdown-item {
+  border-bottom: 1px solid #dbdbdb;
+}
+
+/* WORK AREA */
+.work-area {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  min-height: 700px;
+}
+.work-area .row {
+  padding-bottom: 25px;
+}
+
+/* FOOTER */
+footer {
+    padding: 60px 40px;
+    background-color:#090909;
+    color: #9E9E9E;
+    font-size: 14px;
+    line-height: 25px;
+    text-align: center;
+  }
+  
+  footer h3,footer h5{
+  color:#00cf2f;
+  }
+  
+  footer ul, footer li{
+    padding-left:0px;
+    list-style: none;
+    display: inline-block;
+  }
+  
+  footer a,footer a:hover,footer a:visited,footer a:active{
+    color: #d3d3d3;
+    text-decoration: none;
+    padding: 10px;
+  }
+
+

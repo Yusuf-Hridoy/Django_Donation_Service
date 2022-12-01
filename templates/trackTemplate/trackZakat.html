@@ -1,0 +1,49 @@
+{% extends 'baseTemplate.html' %}
+{% load static %}
+
+{% block TrackZakat %}
+    <!-- bradcam_area_start  -->
+    <div class="bradcam_area breadcam_bg overlay d-flex align-items-center justify-content-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text text-center">
+                        <h3> See Our Zakat Service </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- bradcam_area_end  -->
+
+     <!-- Table_start_area  -->
+    <div class="container p-2 mt-4">
+        <div class="content ">
+            <div class="row">
+                <table class="table table-bordered table-light">
+                <thead class="thead-dark text-center ">
+                    <th> Zakat Donor ID </th>
+                    <th> Recipent Name </th>
+                    <th> Zakat Amount </th>
+                    <th> Show Details </th>
+                </thead>
+                <tbody class="text-center">
+                {% for n in zakatTrack %}
+                    <tr>
+                        <td>{{ n.donorName.id }}</td>
+                        <td>{{ n.recipientName }}</td>
+                        <td>{{ n.receiptAmount }}</td>
+                        <td>
+                            <a href="{% url 'recipient' n.id %}"><i class="fa fa-eye"></i> View </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            </div>
+        </div>
+
+    </div>
+     <!-- Table_ends_area_end  -->
+
+{% endblock %}

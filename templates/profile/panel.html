@@ -1,0 +1,55 @@
+{% extends 'baseTemplate.html' %} {% block panel %}
+
+<br />
+<br />
+<br />
+<br />
+
+<div class="container d-flex">
+  <div class="content col-4 bg-light p-3 m-1">
+    <div class="text-center h3">Dashboard</div>
+  </div>
+
+  <div class="content col-8 bg-light p-3 m-1">
+    <div class="content p-1">
+      <div class="h3">Donations Requests</div>
+      <table class="table table-bordered rounded">
+        <thead class="p-2 thead-light">
+          <th>Descriptions</th>
+          <th>Amount</th>
+        </thead>
+        {% for n in DonationRequest %}
+        <tbody>
+          <td>{{ n.donation_description }}</td>
+          <td>{{ n.donation_amount }}</td>
+        </tbody>
+        {% endfor %}
+      </table>
+    </div>
+
+    <div class="content p-1">
+      <div class="h3">Projects</div>
+      <table class="table table-bordered rounded">
+        <thead class="p-2 thead-light">
+          <th>Descriptions</th>
+          <th>Amount</th>
+          <th>Image</th>
+        </thead>
+        {% for n in ProjectDonation %}
+        <tbody>
+          <td>{{ n.projectName }}</td>
+          <td>{{ n.projectTargetPrice }}</td>
+          <td>
+            <img
+              src="{{ n.projectImage.url }}"
+              style="height: 3rem; width: 4rem"
+            />
+          </td>
+        </tbody>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

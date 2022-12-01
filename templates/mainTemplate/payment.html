@@ -1,0 +1,158 @@
+{% extends 'baseTemplate.html' %}
+{% load static %}
+
+{% block content %}
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class='container'>
+    <div class='row' style='padding-top:25px; padding-bottom:25px;'>
+    <div class='col-md-12'>
+        <div id='mainContentWrapper'>
+            <div class="col-md-8 col-md-offset-2 mx-auto">
+                <h2 style="text-align: center;">
+                    Review & Complete Checkout
+                </h2>
+                <div class="shopping_cart">
+                    <form class="form-horizontal" role="form" action="" method="post" id="payment-form">
+                        {% csrf_token %}
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <div style="text-align: center; width:100%;"><p style="width:100%;"
+                                                                                    class=" btn btn-success">Continue
+                                        to Billing Information » </p></div>
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div>
+                                <div class="panel-body">
+                                    <b>Help us keep your account safe and secure, please verify your billing
+                                        information.</b>
+                                    <br/><br/>
+                                    <table class="table table-striped" style="font-weight: bold;">
+                                        <tr>
+                                            <td style="width: 175px;">
+                                                <label for="id_first_name">First name:</label></td>
+                                            <td>
+                                                <input class="form-control" id="id_first_name" name="first_name"
+                                                       required="required" type="text"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width: 175px;">
+                                                <label for="id_last_name">Last name:</label></td>
+                                            <td>
+                                                <input class="form-control" id="id_last_name" name="last_name"
+                                                       required="required" type="text"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width: 175px;">
+                                                <label for="id_address_line_1">Address:</label></td>
+                                            <td>
+                                                <input class="form-control" id="id_address_line_1"
+                                                       name="address_line_1" required="required" type="text"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width: 175px;">
+                                                <label for="id_state"> City : </label></td>
+                                            <td>
+                                                <select class="form-control" id="id_state" name="state">
+                                                    <option value="AK">Dhaka</option>
+                                                    <option value="AL">Savar</option>
+                                                    <option value="AZ">Gazipur</option>
+                                                    <option value="AR">Faridpur</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width: 175px;">
+                                                <label for="id_postalcode">Postalcode:</label></td>
+                                            <td>
+                                                <input class="form-control" id="id_postalcode" name="postalcode"
+                                                       required="required" type="text"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width: 175px;">
+                                                <label for="id_phone">Phone:</label></td>
+                                            <td>
+                                                <input class="form-control" id="id_phone" name="phone" type="text"/>
+                                            </td>
+                                        </tr>
+
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <div style="text-align: center;"><a data-toggle="collapse"
+                                                                        data-parent="#accordion"
+                                                                        href="#collapseThree"
+                                                                        class=" btn   btn-success" id="payInfo"
+                                                                        style="width:100%;display: none;" onclick="$(this).fadeOut();
+                                            document.getElementById('collapseThree').scrollIntoView()">Enter Payment
+                                        Information »</a>
+                                    </div>
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title text-center">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                                        <b style="color: #1a8d03">Payment Information</b>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <span class='payment-errors'></span>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label" for="card-holder-name"> Bkash
+                                            Number </label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control"
+                                                   placeholder="Enter Number">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label" for="card-number">Bkash Reference </label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" placeholder="Enter Reference">
+                                            <br/>
+                                            <div><img class="pull-right"
+                                                      src="{% static 'img/footer-banner.png' %}"
+                                                      style="max-width: 450px; padding-bottom: 20px;">
+                                            </div>
+                                        </div>
+                                        <a href="{% url 'dashboard' %}" type="submit"
+                                                class="btn btn-success btn-lg" style="width:100%;">Pay
+                                            Now
+                                        </a>
+                                        <br/>
+                                        <div style="text-align: left;"><br/>
+                                            By submiting this order you are agreeing to our <a href="/legal/billing/">universal
+                                                billing agreement</a>, and <a href="/legal/terms/">terms of service</a>.
+                                            If you have any questions about our products or services please contact us
+                                            before placing this order.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

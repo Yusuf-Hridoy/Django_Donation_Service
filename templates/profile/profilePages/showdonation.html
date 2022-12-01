@@ -1,0 +1,27 @@
+{% extends 'profile/baseProfile.html' %}
+{% load static %}
+
+{% block Zakat %}
+    <div class="content justify-content-center d-flex">
+        <table class="table table-bordered p-3 m-2">
+
+            <thead class="table-head border-bottom bg-info p-2 text-center">
+                <tr class="border table-row p-2">
+                    <td>Donation</td>
+                    <td>Date</td>
+                    <td>ORG</td>
+                    <td>Projects</td>
+                </tr>
+            </thead>
+            {% for info in donationData %}
+            <tbody class="text-center">
+                <td>{{ info.donationMoney }} ৳ </td>
+                <td>{{ info.date }}</td>
+                <td>{{ info.organizationDonation }}</td>
+                <td>{{ info.projectDonation }}</td>
+            </tbody>
+            {% endfor %}
+        </table>
+
+    </div>
+{% endblock %}

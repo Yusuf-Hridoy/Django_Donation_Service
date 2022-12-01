@@ -1,0 +1,58 @@
+{% extends 'baseTemplate.html' %}
+
+{% load static %}
+
+{% block ALLvolunteer %}
+
+    <div class="our_volunteer_area section_padding" id="Volunteer">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="section_title text-center mb-55">
+                        <h3><span>Our Volunteer</span></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                {#       for loop will start here  #}
+                {% for volunteer in volunteerData %}
+                    <div class="col-lg-4 col-md-6">
+
+                        <div class="single_volenteer">
+
+
+                            <div class="volenteer_thumb">
+                                <img src="{{ volunteer.volunteerImage.url }}" alt=""/>
+                            </div>
+                            <div class="voolenteer_info d-flex align-items-end">
+                                <div class="social_links">
+                                    <ul>
+                                        <li>
+                                            <a href="#"> <i class="fa fa-facebook"></i> </a>
+                                        </li>
+                                        <li>
+                                            <a href="#"> <i class="fa fa-pinterest"></i> </a>
+                                        </li>
+                                        <li>
+                                            <a href="#"> <i class="fa fa-linkedin"></i> </a>
+                                        </li>
+                                        <li>
+                                            <a href="#"> <i class="fa fa-twitter"></i> </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="info_inner">
+                                    <h4>{{ volunteer.volunteerName }}</h4>
+                                    <p>Volunteer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                {#            for wil ends here #}
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
